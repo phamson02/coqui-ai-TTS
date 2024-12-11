@@ -1,6 +1,7 @@
 # Installation
 
-🐸TTS supports python >=3.9 <3.13.0 and was tested on Ubuntu 22.04.
+🐸TTS supports python >=3.9 <3.13.0 and was tested on Ubuntu 24.04, but should
+also run on Mac and Windows.
 
 ## Using `pip`
 
@@ -33,8 +34,3 @@ make install
 # Same as above + dev dependencies and pre-commit
 make install_dev
 ```
-
-## On Windows
-If you are on Windows, 👑@GuyPaddock wrote installation instructions
-[here](https://stackoverflow.com/questions/66726331/) (note that these are out
-of date, e.g. you need to have at least Python 3.9)

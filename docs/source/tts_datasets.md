@@ -1,4 +1,4 @@
-# TTS Datasets
+# TTS datasets
 
 Some of the known public datasets that we successfully applied 🐸TTS:
 

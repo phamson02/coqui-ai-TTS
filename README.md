@@ -1,11 +1,10 @@
-
-## 🐸Coqui TTS News
+# 🐸Coqui TTS
+## News
 - 📣 Fork of the [original, unmaintained repository](https://github.com/coqui-ai/TTS). New PyPI package: [coqui-tts](https://pypi.org/project/coqui-tts)
 - 📣 [OpenVoice](https://github.com/myshell-ai/OpenVoice) models now available for voice conversion.
 - 📣 Prebuilt wheels are now also published for Mac and Windows (in addition to Linux as before) for easier installation across platforms.
-- 📣 ⓍTTSv2 is here with 17 languages and better performance across the board. ⓍTTS can stream with <200ms latency.
-- 📣 ⓍTTS fine-tuning code is out. Check the [example recipes](https://github.com/idiap/coqui-ai-TTS/tree/dev/recipes/ljspeech).
-- 📣 [🐶Bark](https://github.com/suno-ai/bark) is now available for inference with unconstrained voice cloning. [Docs](https://coqui-tts.readthedocs.io/en/latest/models/bark.html)
+- 📣 XTTSv2 is here with 17 languages and better performance across the board. XTTS can stream with <200ms latency.
+- 📣 XTTS fine-tuning code is out. Check the [example recipes](https://github.com/idiap/coqui-ai-TTS/tree/dev/recipes/ljspeech).
 - 📣 You can use [Fairseq models in ~1100 languages](https://github.com/facebookresearch/fairseq/tree/main/examples/mms) with 🐸TTS.
 
 ## <img src="https://raw.githubusercontent.com/idiap/coqui-ai-TTS/main/images/coqui-log-green-TTS.png" height="56"/>
@@ -21,6 +20,7 @@
 ______________________________________________________________________
 
 [![Discord](https://img.shields.io/discord/1037326658807533628?color=%239B59B6&label=chat%20on%20discord)](https://discord.gg/5eXr5seRrv)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/coqui-tts)
 [![License](<https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg>)](https://opensource.org/licenses/MPL-2.0)
 [![PyPI version](https://badge.fury.io/py/coqui-tts.svg)](https://badge.fury.io/py/coqui-tts)
 [![Downloads](https://pepy.tech/badge/coqui-tts)](https://pepy.tech/project/coqui-tts)
@@ -63,71 +63,65 @@ repository are also still a useful source of information.
 | 🚀 **Released Models**            | [Standard models](https://github.com/idiap/coqui-ai-TTS/blob/dev/TTS/.models.json) and [Fairseq models in ~1100 languages](https://github.com/idiap/coqui-ai-TTS#example-text-to-speech-using-fairseq-models-in-1100-languages-)|
 
 ## Features
-- High-performance Deep Learning models for Text2Speech tasks. See lists of models below.
-- Fast and efficient model training.
-- Detailed training logs on the terminal and Tensorboard.
-- Support for Multi-speaker TTS.
-- Efficient, flexible, lightweight but feature complete `Trainer API`.
+- High-performance text-to-speech and voice conversion models, see list below.
+- Fast and efficient model training with detailed training logs on the terminal and Tensorboard.
+- Support for multi-speaker and multilingual TTS.
 - Released and ready-to-use models.
-- Tools to curate Text2Speech datasets under```dataset_analysis```.
-- Utilities to use and test your models.
+- Tools to curate TTS datasets under ```dataset_analysis/```.
+- Command line and Python APIs to use and test your models.
 - Modular (but not too much) code base enabling easy implementation of new ideas.
 
 ## Model Implementations
 ### Spectrogram models
-- Tacotron: [paper](https://arxiv.org/abs/1703.10135)
-- Tacotron2: [paper](https://arxiv.org/abs/1712.05884)
-- Glow-TTS: [paper](https://arxiv.org/abs/2005.11129)
-- Speedy-Speech: [paper](https://arxiv.org/abs/2008.03802)
-- Align-TTS: [paper](https://arxiv.org/abs/2003.01950)
-- FastPitch: [paper](https://arxiv.org/pdf/2006.06873.pdf)
-- FastSpeech: [paper](https://arxiv.org/abs/1905.09263)
-- FastSpeech2: [paper](https://arxiv.org/abs/2006.04558)
-- SC-GlowTTS: [paper](https://arxiv.org/abs/2104.05557)
-- Capacitron: [paper](https://arxiv.org/abs/1906.03402)
-- OverFlow: [paper](https://arxiv.org/abs/2211.06892)
-- Neural HMM TTS: [paper](https://arxiv.org/abs/2108.13320)
-- Delightful TTS: [paper](https://arxiv.org/abs/2110.12612)
+- [Tacotron](https://arxiv.org/abs/1703.10135), [Tacotron2](https://arxiv.org/abs/1712.05884)
+- [Glow-TTS](https://arxiv.org/abs/2005.11129), [SC-GlowTTS](https://arxiv.org/abs/2104.05557)
+- [Speedy-Speech](https://arxiv.org/abs/2008.03802)
+- [Align-TTS](https://arxiv.org/abs/2003.01950)
+- [FastPitch](https://arxiv.org/pdf/2006.06873.pdf)
+- [FastSpeech](https://arxiv.org/abs/1905.09263), [FastSpeech2](https://arxiv.org/abs/2006.04558)
+- [Capacitron](https://arxiv.org/abs/1906.03402)
+- [OverFlow](https://arxiv.org/abs/2211.06892)
+- [Neural HMM TTS](https://arxiv.org/abs/2108.13320)
+- [Delightful TTS](https://arxiv.org/abs/2110.12612)
 
 ### End-to-End Models
-- ⓍTTS: [blog](https://coqui.ai/blog/tts/open_xtts)
-- VITS: [paper](https://arxiv.org/pdf/2106.06103)
-- 🐸 YourTTS: [paper](https://arxiv.org/abs/2112.02418)
-- 🐢 Tortoise: [orig. repo](https://github.com/neonbjb/tortoise-tts)
-- 🐶 Bark: [orig. repo](https://github.com/suno-ai/bark)
-
-### Attention Methods
-- Guided Attention: [paper](https://arxiv.org/abs/1710.08969)
-- Forward Backward Decoding: [paper](https://arxiv.org/abs/1907.09006)
-- Graves Attention: [paper](https://arxiv.org/abs/1910.10288)
-- Double Decoder Consistency: [blog](https://erogol.com/solving-attention-problems-of-tts-models-with-double-decoder-consistency/)
-- Dynamic Convolutional Attention: [paper](https://arxiv.org/pdf/1910.10288.pdf)
-- Alignment Network: [paper](https://arxiv.org/abs/2108.10447)
-
-### Speaker Encoder
-- GE2E: [paper](https://arxiv.org/abs/1710.10467)
-- Angular Loss: [paper](https://arxiv.org/pdf/2003.11982.pdf)
+- [XTTS](https://arxiv.org/abs/2406.04904)
+- [VITS](https://arxiv.org/pdf/2106.06103)
+- 🐸[YourTTS](https://arxiv.org/abs/2112.02418)
+- 🐢[Tortoise](https://github.com/neonbjb/tortoise-tts)
+- 🐶[Bark](https://github.com/suno-ai/bark)
 
 ### Vocoders
-- MelGAN: [paper](https://arxiv.org/abs/1910.06711)
-- MultiBandMelGAN: [paper](https://arxiv.org/abs/2005.05106)
-- ParallelWaveGAN: [paper](https://arxiv.org/abs/1910.11480)
-- GAN-TTS discriminators: [paper](https://arxiv.org/abs/1909.11646)
-- WaveRNN: [origin](https://github.com/fatchord/WaveRNN/)
-- WaveGrad: [paper](https://arxiv.org/abs/2009.00713)
-- HiFiGAN: [paper](https://arxiv.org/abs/2010.05646)
-- UnivNet: [paper](https://arxiv.org/abs/2106.07889)
+- [MelGAN](https://arxiv.org/abs/1910.06711)
+- [MultiBandMelGAN](https://arxiv.org/abs/2005.05106)
+- [ParallelWaveGAN](https://arxiv.org/abs/1910.11480)
+- [GAN-TTS discriminators](https://arxiv.org/abs/1909.11646)
+- [WaveRNN](https://github.com/fatchord/WaveRNN/)
+- [WaveGrad](https://arxiv.org/abs/2009.00713)
+- [HiFiGAN](https://arxiv.org/abs/2010.05646)
+- [UnivNet](https://arxiv.org/abs/2106.07889)
 
 ### Voice Conversion
-- FreeVC: [paper](https://arxiv.org/abs/2210.15418)
-- OpenVoice: [technical report](https://arxiv.org/abs/2312.01479)
+- [FreeVC](https://arxiv.org/abs/2210.15418)
+- [OpenVoice](https://arxiv.org/abs/2312.01479)
+
+### Others
+- Attention methods: [Guided Attention](https://arxiv.org/abs/1710.08969),
+  [Forward Backward Decoding](https://arxiv.org/abs/1907.09006),
+  [Graves Attention](https://arxiv.org/abs/1910.10288),
+  [Double Decoder Consistency](https://erogol.com/solving-attention-problems-of-tts-models-with-double-decoder-consistency/),
+  [Dynamic Convolutional Attention](https://arxiv.org/pdf/1910.10288.pdf),
+  [Alignment Network](https://arxiv.org/abs/2108.10447)
+- Speaker encoders: [GE2E](https://arxiv.org/abs/1710.10467),
+  [Angular Loss](https://arxiv.org/pdf/2003.11982.pdf)
 
 You can also help us implement more models.
 
 ## Installation
-🐸TTS is tested on Ubuntu 22.04 with **python >= 3.9, < 3.13.**.
+🐸TTS is tested on Ubuntu 24.04 with **python >= 3.9, < 3.13.**, but should also
+work on Mac and Windows.
 
-If you are only interested in [synthesizing speech](https://coqui-tts.readthedocs.io/en/latest/inference.html) with the released 🐸TTS models, installing from PyPI is the easiest option.
+If you are only interested in [synthesizing speech](https://coqui-tts.readthedocs.io/en/latest/inference.html) with the pretrained 🐸TTS models, installing from PyPI is the easiest option.
 
 ```bash
 pip install coqui-tts
@@ -172,14 +166,9 @@ make system-deps  # intended to be used on Ubuntu (Debian). Let us know if you h
 make install
 ```
 
-If you are on Windows, 👑@GuyPaddock wrote installation instructions
-[here](https://stackoverflow.com/questions/66726331/how-can-i-run-mozilla-tts-coqui-tts-training-with-cuda-on-a-windows-system)
-(note that these are out of date, e.g. you need to have at least Python 3.9).
-
-
 ## Docker Image
-You can also try TTS without install with the docker image.
-Simply run the following command and you will be able to run TTS without installing it.
+You can also try out Coqui TTS without installation with the docker image.
+Simply run the following command and you will be able to run TTS:
 
 ```bash
 docker run --rm -it -p 5002:5002 --entrypoint /bin/bash ghcr.io/coqui-ai/tts-cpu
@@ -281,11 +270,12 @@ api.tts_to_file(
 
 <!-- begin-tts-readme -->
 
-Synthesize speech on command line.
+Synthesize speech on the command line.
 
 You can either use your trained model or choose a model from the provided list.
 
-If you don't specify any models, then it uses LJSpeech based English model.
+If you don't specify any models, then it uses a Tacotron2 English model trained
+on LJSpeech.
 
 #### Single Speaker Models
 

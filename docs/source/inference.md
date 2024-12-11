@@ -1,5 +1,5 @@
 (synthesizing_speech)=
-# Synthesizing Speech
+# Synthesizing speech
 
 First, you need to install TTS. We recommend using PyPi. You need to call the command below:
 
@@ -136,7 +136,7 @@ wav = tts.tts(text="Hello world!", speaker_wav="my/cloning/audio.wav", language=
 tts.tts_to_file(text="Hello world!", speaker_wav="my/cloning/audio.wav", language="en", file_path="output.wav")
 ```
 
-#### Here is an example for a single speaker model.
+### Single speaker model.
 
 ```python
 # Init TTS with the target model name
@@ -145,7 +145,7 @@ tts = TTS(model_name="tts_models/de/thorsten/tacotron2-DDC", progress_bar=False)
 tts.tts_to_file(text="Ich bin eine Testnachricht.", file_path=OUTPUT_PATH)
 ```
 
-#### Example voice cloning with YourTTS in English, French and Portuguese:
+### Voice cloning with YourTTS in English, French and Portuguese:
 
 ```python
 tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
@@ -154,14 +154,14 @@ tts.tts_to_file("C'est le clonage de la voix.", speaker_wav="my/cloning/audio.wa
 tts.tts_to_file("Isso é clonagem de voz.", speaker_wav="my/cloning/audio.wav", language="pt", file_path="output.wav")
 ```
 
-#### Example voice conversion converting speaker of the `source_wav` to the speaker of the `target_wav`
+### Voice conversion from the speaker of `source_wav` to the speaker of `target_wav`
 
 ```python
 tts = TTS(model_name="voice_conversion_models/multilingual/vctk/freevc24", progress_bar=False).to("cuda")
 tts.voice_conversion_to_file(source_wav="my/source.wav", target_wav="my/target.wav", file_path="output.wav")
 ```
 
-#### Example voice cloning by a single speaker TTS model combining with the voice conversion model.
+### Voice cloning by combining single speaker TTS model with the voice conversion model.
 
 This way, you can clone voices by using any model in 🐸TTS.
 
@@ -174,7 +174,7 @@ tts.tts_with_vc_to_file(
 )
 ```
 
-#### Example text to speech using **Fairseq models in ~1100 languages** 🤯.
+### Text to speech using **Fairseq models in ~1100 languages** 🤯.
 For these models use the following name format: `tts_models/<lang-iso_code>/fairseq/vits`.
 
 You can find the list of language ISO codes [here](https://dl.fbaipublicfiles.com/mms/tts/all-tts-languages.html) and learn about the Fairseq models [here](https://github.com/facebookresearch/fairseq/tree/main/examples/mms).

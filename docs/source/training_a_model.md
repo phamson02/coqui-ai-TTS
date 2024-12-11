@@ -1,4 +1,4 @@
-# Training a Model
+# Training a model
 
 1. Decide the model you want to use.
 
@@ -132,7 +132,7 @@
     In the example above, we trained a `GlowTTS` model, but the same workflow applies to all the other 🐸TTS models.
 
 
-# Multi-speaker Training
+## Multi-speaker Training
 
 Training a multi-speaker model is mostly the same as training a single-speaker model.
 You need to specify a couple of configuration parameters, initiate a `SpeakerManager` instance and pass it to the model.
