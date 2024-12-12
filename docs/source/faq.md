@@ -7,7 +7,7 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
 - If you feel like it's a bug to be fixed, then prefer Github issues with the same level of scrutiny.
 
 ## What are the requirements of a good 🐸TTS dataset?
-- [See this page](what_makes_a_good_dataset.md)
+- [See this page](datasets/what_makes_a_good_dataset.md)
 
 ## How should I choose the right model?
 - First, train Tacotron. It is smaller and faster to experiment with. If it performs poorly, try Tacotron2.
@@ -18,7 +18,7 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
 ## How can I train my own `tts` model?
 0. Check your dataset with notebooks in [dataset_analysis](https://github.com/idiap/coqui-ai-TTS/tree/main/notebooks/dataset_analysis) folder. Use [this notebook](https://github.com/idiap/coqui-ai-TTS/blob/main/notebooks/dataset_analysis/CheckSpectrograms.ipynb) to find the right audio processing parameters. A better set of parameters results in a better audio synthesis.
 
-1. Write your own dataset `formatter` in `datasets/formatters.py` or format your dataset as one of the supported datasets, like LJSpeech.
+1. Write your own dataset `formatter` in `datasets/formatters.py` or [format](datasets/formatting_your_dataset) your dataset as one of the supported datasets, like LJSpeech.
     A `formatter` parses the metadata file and converts a list of training samples.
 
 2. If you have a dataset with a different alphabet than English, you need to set your own character list in the ```config.json```.

@@ -22,7 +22,7 @@ them and fine-tune it for your own dataset. This will help you in two main ways:
     speech dataset and achieve reasonable results with only a couple of hours of data.
 
     However, note that, fine-tuning does not ensure great results. The model
-    performance still depends on the [dataset quality](what_makes_a_good_dataset.md)
+    performance still depends on the [dataset quality](../datasets/what_makes_a_good_dataset.md)
     and the hyper-parameters you choose for fine-tuning. Therefore,
     it still takes a bit of tinkering.
 
@@ -32,7 +32,7 @@ them and fine-tune it for your own dataset. This will help you in two main ways:
 1. Setup your dataset.
 
     You need to format your target dataset in a certain way so that 🐸TTS data loader will be able to load it for the
-    training. Please see [this page](formatting_your_dataset.md) for more information about formatting.
+    training. Please see [this page](../datasets/formatting_your_dataset.md) for more information about formatting.
 
 2. Choose the model you want to fine-tune.
 
@@ -49,7 +49,7 @@ them and fine-tune it for your own dataset. This will help you in two main ways:
     You should choose the model based on your requirements. Some models are fast and some are better in speech quality.
     One lazy way to test a model is running the model on the hardware you want to use and see how it works. For
     simple testing, you can use the `tts` command on the terminal. For more info
-    see [here](inference.md).
+    see [here](../inference.md).
 
 3. Download the model.
 

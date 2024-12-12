@@ -1,7 +1,9 @@
 (formatting_your_dataset)=
 # Formatting your dataset
 
-For training a TTS model, you need a dataset with speech recordings and transcriptions. The speech must be divided into audio clips and each clip needs transcription.
+For training a TTS model, you need a dataset with speech recordings and
+transcriptions. The speech must be divided into audio clips and each clip needs
+a transcription.
 
 If you have a single audio file and you need to split it into clips, there are different open-source tools for you. We recommend Audacity. It is an open-source and free audio editing software.
 

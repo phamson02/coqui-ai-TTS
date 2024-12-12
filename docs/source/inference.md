@@ -86,8 +86,8 @@ tts --model_name "voice_conversion/<language>/<dataset>/<model_name>"
 
 You can boot up a demo 🐸TTS server to run an inference with your models (make
 sure to install the additional dependencies with `pip install coqui-tts[server]`).
-Note that the server is not optimized for performance but gives you an easy way
-to interact with the models.
+Note that the server is not optimized for performance and does not support all
+Coqui models yet.
 
 The demo server provides pretty much the same interface as the CLI command.
 
@@ -191,4 +191,9 @@ api.tts_with_vc_to_file(
     speaker_wav="target/speaker.wav",
     file_path="ouptut.wav"
 )
+```
+
+```{toctree}
+:hidden:
+marytts
 ```

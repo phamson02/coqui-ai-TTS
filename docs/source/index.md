@@ -4,10 +4,10 @@
 ```
 ----
 
-# Documentation Content
 ```{toctree}
 :maxdepth: 1
 :caption: Get started
+:hidden:
 
 tutorial_for_nervous_beginners
 installation
@@ -20,22 +20,19 @@ contributing
 ```{toctree}
 :maxdepth: 1
 :caption: Using Coqui
+:hidden:
 
 inference
-training_a_model
-finetuning
-implementing_a_new_model
-implementing_a_new_language_frontend
-formatting_your_dataset
-what_makes_a_good_dataset
-tts_datasets
-marytts
+training/index
+extension/index
+datasets/index
 ```
 
 
 ```{toctree}
 :maxdepth: 1
 :caption: Main Classes
+:hidden:
 
 configuration
 main_classes/trainer_api
@@ -50,6 +47,7 @@ main_classes/speaker_manager
 ```{toctree}
 :maxdepth: 1
 :caption: TTS Models
+:hidden:
 
 models/glow_tts.md
 models/vits.md

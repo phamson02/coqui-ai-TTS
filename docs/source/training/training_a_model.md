@@ -11,11 +11,10 @@
 
 3. Check the recipes.
 
-    Recipes are located under `TTS/recipes/`. They do not promise perfect models but they provide a good start point for
-    `Nervous Beginners`.
+    Recipes are located under `TTS/recipes/`. They do not promise perfect models but they provide a good start point.
     A recipe for `GlowTTS` using `LJSpeech` dataset looks like below. Let's be creative and call this `train_glowtts.py`.
 
-    ```{literalinclude} ../../recipes/ljspeech/glow_tts/train_glowtts.py
+    ```{literalinclude} ../../../recipes/ljspeech/glow_tts/train_glowtts.py
     ```
 
     You need to change fields of the `BaseDatasetConfig` to match your dataset and then update `GlowTTSConfig`
@@ -113,7 +112,7 @@
 
     Note that different models have different metrics, visuals and outputs.
 
-    You should also check the [FAQ page](https://github.com/coqui-ai/TTS/wiki/FAQ) for common problems and solutions
+    You should also check the [FAQ page](../faq.md) for common problems and solutions
     that occur in a training.
 
 7. Use your best model for inference.
@@ -142,5 +141,5 @@ d-vectors. For using d-vectors, you first need to compute the d-vectors using th
 
 The same Glow-TTS model above can be trained on a multi-speaker VCTK dataset with the script below.
 
-```{literalinclude} ../../recipes/vctk/glow_tts/train_glow_tts.py
+```{literalinclude} ../../../recipes/vctk/glow_tts/train_glow_tts.py
 ```

@@ -24,10 +24,14 @@ $ tts-server --list_models  # list the available models.
 ```
 ![server.gif](https://github.com/idiap/coqui-ai-TTS/raw/main/images/demo_server.gif)
 
+See [this page](inference.md) for more details on synthesizing speech with the
+CLI, server or Python API.
 
 ## Training a `tts` Model
 
-A breakdown of a simple script that trains a GlowTTS model on the LJspeech dataset. See the comments for more details.
+A breakdown of a simple script that trains a GlowTTS model on the LJspeech
+dataset. For a more in-depth guide to training and fine-tuning also see [this
+page](training/index.md).
 
 ### Pure Python Way
 

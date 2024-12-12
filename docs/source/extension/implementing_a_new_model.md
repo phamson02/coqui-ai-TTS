@@ -36,7 +36,8 @@
     There is also the `callback` interface by which you can manipulate both the model and the `Trainer` states. Callbacks give you
     an infinite flexibility to add custom behaviours for your model and training routines.
 
-    For more details, see [BaseTTS](main_classes/model_api.md#base-tts-model) and :obj:`TTS.utils.callbacks`.
+    For more details, see [BaseTTS](../main_classes/model_api.md#base-tts-model)
+    and `TTS.utils.callbacks`.
 
 6. Optionally, define `MyModelArgs`.
 
