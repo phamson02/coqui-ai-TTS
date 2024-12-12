@@ -1,8 +1,11 @@
+---
+hide-toc: true
+---
 
 ```{include} ../../README.md
 :relative-images:
+:end-before: <!-- start installation -->
 ```
-----
 
 ```{toctree}
 :maxdepth: 1
