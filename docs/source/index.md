@@ -13,6 +13,7 @@ tutorial_for_nervous_beginners
 installation
 docker_images
 faq
+project_structure
 contributing
 ```
 
