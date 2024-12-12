@@ -1,4 +1,4 @@
-# Humble FAQ
+# FAQ
 We tried to collect common issues and questions we receive about 🐸TTS. It is worth checking before going deeper.
 
 ## Errors with a pre-trained model. How can I resolve this?
@@ -7,7 +7,7 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
 - If you feel like it's a bug to be fixed, then prefer Github issues with the same level of scrutiny.
 
 ## What are the requirements of a good 🐸TTS dataset?
-* {ref}`See this page <what_makes_a_good_dataset>`
+- [See this page](datasets/what_makes_a_good_dataset.md)
 
 ## How should I choose the right model?
 - First, train Tacotron. It is smaller and faster to experiment with. If it performs poorly, try Tacotron2.
@@ -18,7 +18,7 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
 ## How can I train my own `tts` model?
 0. Check your dataset with notebooks in [dataset_analysis](https://github.com/idiap/coqui-ai-TTS/tree/main/notebooks/dataset_analysis) folder. Use [this notebook](https://github.com/idiap/coqui-ai-TTS/blob/main/notebooks/dataset_analysis/CheckSpectrograms.ipynb) to find the right audio processing parameters. A better set of parameters results in a better audio synthesis.
 
-1. Write your own dataset `formatter` in `datasets/formatters.py` or format your dataset as one of the supported datasets, like LJSpeech.
+1. Write your own dataset `formatter` in `datasets/formatters.py` or [format](datasets/formatting_your_dataset) your dataset as one of the supported datasets, like LJSpeech.
     A `formatter` parses the metadata file and converts a list of training samples.
 
 2. If you have a dataset with a different alphabet than English, you need to set your own character list in the ```config.json```.
@@ -61,7 +61,8 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
     - SingleGPU training: ```CUDA_VISIBLE_DEVICES="0" python train_tts.py --config_path config.json```
     - MultiGPU training: ```python3 -m trainer.distribute --gpus "0,1" --script TTS/bin/train_tts.py --config_path config.json```
 
-**Note:** You can also train your model using pure 🐍 python. Check ```{eval-rst} :ref: 'tutorial_for_nervous_beginners'```.
+**Note:** You can also train your model using pure 🐍 python. Check the
+[tutorial](tutorial_for_nervous_beginners.md).
 
 ## How can I train in a different language?
 - Check steps 2, 3, 4, 5 above.
@@ -104,7 +105,7 @@ The best approach is to pick a set of promising models and run a Mean-Opinion-Sc
 - Check the 4th step under "How can I check model performance?"
 
 ## How can I test a trained model?
-- The best way is to use `tts` or `tts-server` commands. For details check {ref}`here <synthesizing_speech>`.
+- The best way is to use `tts` or `tts-server` commands. For details check [here](inference.md).
 - If you need to code your own ```TTS.utils.synthesizer.Synthesizer``` class.
 
 ## My Tacotron model does not stop - I see "Decoder stopped with 'max_decoder_steps" - Stopnet does not work.
