@@ -157,7 +157,7 @@ class TTS(nn.Module):
 
     def download_model_by_name(
         self, model_name: str, vocoder_name: Optional[str] = None
-    ) -> tuple[Optional[str], Optional[str], Optional[str]]:
+    ) -> tuple[Optional[Path], Optional[Path], Optional[Path]]:
         model_path, config_path, model_item = self.manager.download_model(model_name)
         if "fairseq" in model_name or (model_item is not None and isinstance(model_item["model_url"], list)):
             # return model directory if there are multiple files
