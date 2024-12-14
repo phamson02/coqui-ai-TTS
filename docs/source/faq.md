@@ -16,13 +16,19 @@ We tried to collect common issues and questions we receive about 🐸TTS. It is 
 - If you need faster models, consider SpeedySpeech, GlowTTS or AlignTTS. Keep in mind that SpeedySpeech requires a pre-trained Tacotron or Tacotron2 model to compute text-to-speech alignments.
 
 ## How can I train my own `tts` model?
+
+```{note} XTTS has separate fine-tuning scripts, see [here](models/xtts.md#training).
+```
+
 0. Check your dataset with notebooks in [dataset_analysis](https://github.com/idiap/coqui-ai-TTS/tree/main/notebooks/dataset_analysis) folder. Use [this notebook](https://github.com/idiap/coqui-ai-TTS/blob/main/notebooks/dataset_analysis/CheckSpectrograms.ipynb) to find the right audio processing parameters. A better set of parameters results in a better audio synthesis.
 
 1. Write your own dataset `formatter` in `datasets/formatters.py` or [format](datasets/formatting_your_dataset) your dataset as one of the supported datasets, like LJSpeech.
     A `formatter` parses the metadata file and converts a list of training samples.
 
 2. If you have a dataset with a different alphabet than English, you need to set your own character list in the ```config.json```.
-    - If you use phonemes for training and your language is supported [here](https://github.com/rhasspy/gruut#supported-languages), you don't need to set your character list.
+    - If you use phonemes for training and your language is supported by
+    [Espeak](https://github.com/espeak-ng/espeak-ng/blob/master/docs/languages.md)
+    or [Gruut](https://github.com/rhasspy/gruut#supported-languages), you don't need to set your character list.
     - You can use `TTS/bin/find_unique_chars.py` to get characters used in your dataset.
 
 3. Write your own text cleaner in ```utils.text.cleaners```. It is not always necessary, except when you have a different alphabet or language-specific requirements.

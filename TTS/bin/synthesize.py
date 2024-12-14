@@ -34,7 +34,7 @@ You can either use your trained model or choose a model from the provided list.
   tts --model_info_by_name vocoder_models/en/ljspeech/hifigan_v2
   ```
 
-#### Single Speaker Models
+#### Single speaker models
 
 - Run TTS with the default model (`tts_models/en/ljspeech/tacotron2-DDC`):
 
@@ -102,7 +102,7 @@ You can either use your trained model or choose a model from the provided list.
       --vocoder_config_path path/to/vocoder_config.json
   ```
 
-#### Multi-speaker Models
+#### Multi-speaker models
 
 - List the available speakers and choose a `<speaker_id>` among them:
 
@@ -125,7 +125,7 @@ You can either use your trained model or choose a model from the provided list.
       --speakers_file_path path/to/speaker.json --speaker_idx <speaker_id>
   ```
 
-#### Voice Conversion Models
+#### Voice conversion models
 
 ```sh
 tts --out_path output/path/speech.wav --model_name "<language>/<dataset>/<model_name>" \\

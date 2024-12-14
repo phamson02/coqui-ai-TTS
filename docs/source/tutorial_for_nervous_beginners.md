@@ -29,6 +29,9 @@ CLI, server or Python API.
 
 ## Training a `tts` Model
 
+```{note} XTTS has separate fine-tuning scripts, see [here](models/xtts.md#training).
+```
+
 A breakdown of a simple script that trains a GlowTTS model on the LJspeech
 dataset. For a more in-depth guide to training and fine-tuning also see [this
 page](training/index.md).
