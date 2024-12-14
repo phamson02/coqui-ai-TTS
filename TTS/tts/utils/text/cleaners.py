@@ -44,6 +44,7 @@ def convert_to_ascii(text: str) -> str:
 
 def remove_aux_symbols(text: str) -> str:
     text = re.sub(r"[\<\>\(\)\[\]\"]+", "", text)
+    text = text.replace("̩", "")  # diacritic for syllabic phonemes
     return text
 
 
