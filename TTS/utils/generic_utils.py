@@ -4,7 +4,7 @@ import importlib
 import logging
 import re
 from pathlib import Path
-from typing import Callable, Dict, Optional, TypeVar, Union
+from typing import Any, Callable, Dict, Optional, TypeVar, Union
 
 import torch
 from packaging.version import Version
@@ -133,3 +133,8 @@ def setup_logger(
 def is_pytorch_at_least_2_4() -> bool:
     """Check if the installed Pytorch version is 2.4 or higher."""
     return Version(torch.__version__) >= Version("2.4")
+
+
+def optional_to_str(x: Optional[Any]) -> str:
+    """Convert input to string, using empty string if input is None."""
+    return "" if x is None else str(x)

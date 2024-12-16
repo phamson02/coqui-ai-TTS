@@ -29,6 +29,9 @@ them and fine-tune it for your own dataset. This will help you in two main ways:
 
 ## Steps to fine-tune a 🐸 TTS model
 
+```{note} XTTS has separate fine-tuning scripts, see [here](../models/xtts.md#training).
+```
+
 1. Setup your dataset.
 
     You need to format your target dataset in a certain way so that 🐸TTS data loader will be able to load it for the
