@@ -311,8 +311,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     """Entry point for `tts` command line interface."""
-    setup_logger("TTS", level=logging.INFO, screen=True, formatter=ConsoleFormatter())
     args = parse_args()
+    stream = sys.stderr if args.pipe_out else sys.stdout
+    setup_logger("TTS", level=logging.INFO, stream=stream, formatter=ConsoleFormatter())
 
     pipe_out = sys.stdout if args.pipe_out else None
 
