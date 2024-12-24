@@ -85,14 +85,14 @@ class HifiDecoder(torch.nn.Module):
         z = torch.nn.functional.interpolate(
             latents.transpose(1, 2),
             scale_factor=[self.ar_mel_length_compression / self.output_hop_length],
-            mode="linear",
+            mode="nearest",
         ).squeeze(1)
         # upsample to the right sr
         if self.output_sample_rate != self.input_sample_rate:
             z = torch.nn.functional.interpolate(
                 z,
                 scale_factor=[self.output_sample_rate / self.input_sample_rate],
-                mode="linear",
+                mode="nearest",
             ).squeeze(0)
         o = self.waveform_decoder(z, g=g)
         return o
