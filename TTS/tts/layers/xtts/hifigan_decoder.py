@@ -3,6 +3,7 @@ import logging
 import torch
 from trainer.io import load_fsspec
 
+from TTS.encoder.models.resnet import ResNetSpeakerEncoder
 from TTS.vocoder.models.hifigan_generator import HifiganGenerator
 
 logger = logging.getLogger(__name__)
@@ -54,6 +55,13 @@ class HifiDecoder(torch.nn.Module):
             conv_post_weight_norm=False,
             conv_post_bias=False,
             cond_in_each_up_layer=cond_d_vector_in_each_upsampling_layer,
+        )
+        self.speaker_encoder = ResNetSpeakerEncoder(
+            input_dim=64,
+            proj_dim=512,
+            log_input=True,
+            use_torch_spec=True,
+            audio_config=speaker_encoder_audio_config,
         )
 
     @property
